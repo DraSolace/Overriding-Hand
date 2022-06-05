@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfaceKKSIHj.ui'
+## Form generated from reading UI file 'interfaceSPEght.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -465,7 +465,7 @@ class Ui_MainWindow(object):
         self.toolBox_3.addItem(self.keyboard, icon6, u"\u041a\u043b\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0430")
         self.mouse = QWidget()
         self.mouse.setObjectName(u"mouse")
-        self.mouse.setGeometry(QRect(0, 0, 156, 126))
+        self.mouse.setGeometry(QRect(0, 0, 188, 126))
         self.horizontalLayout_39 = QHBoxLayout(self.mouse)
         self.horizontalLayout_39.setSpacing(0)
         self.horizontalLayout_39.setObjectName(u"horizontalLayout_39")
@@ -5267,9 +5267,9 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.toolBox.setCurrentIndex(0)
+        self.toolBox.setCurrentIndex(2)
         self.toolBox_2.setCurrentIndex(0)
-        self.toolBox_3.setCurrentIndex(1)
+        self.toolBox_3.setCurrentIndex(0)
         self.stackedWidget.setCurrentIndex(0)
         self.stackedWidget_2.setCurrentIndex(0)
 
