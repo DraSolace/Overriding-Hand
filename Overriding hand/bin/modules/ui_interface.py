@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'interfaceLuOSXL.ui'
+## Form generated from reading UI file 'interfaceKKSIHj.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -362,7 +362,7 @@ class Ui_MainWindow(object):
         self.toolBox_2.setFont(font2)
         self.Overscript = QWidget()
         self.Overscript.setObjectName(u"Overscript")
-        self.Overscript.setGeometry(QRect(0, 0, 165, 194))
+        self.Overscript.setGeometry(QRect(0, 0, 168, 262))
         self.horizontalLayout_20 = QHBoxLayout(self.Overscript)
         self.horizontalLayout_20.setSpacing(0)
         self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
@@ -391,7 +391,7 @@ class Ui_MainWindow(object):
         self.toolBox_3.setStyleSheet(u"")
         self.keyboard = QWidget()
         self.keyboard.setObjectName(u"keyboard")
-        self.keyboard.setGeometry(QRect(0, 0, 121, 72))
+        self.keyboard.setGeometry(QRect(0, 0, 156, 126))
         self.horizontalLayout_52 = QHBoxLayout(self.keyboard)
         self.horizontalLayout_52.setSpacing(0)
         self.horizontalLayout_52.setObjectName(u"horizontalLayout_52")
@@ -465,7 +465,7 @@ class Ui_MainWindow(object):
         self.toolBox_3.addItem(self.keyboard, icon6, u"\u041a\u043b\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0430")
         self.mouse = QWidget()
         self.mouse.setObjectName(u"mouse")
-        self.mouse.setGeometry(QRect(0, 0, 129, 120))
+        self.mouse.setGeometry(QRect(0, 0, 156, 126))
         self.horizontalLayout_39 = QHBoxLayout(self.mouse)
         self.horizontalLayout_39.setSpacing(0)
         self.horizontalLayout_39.setObjectName(u"horizontalLayout_39")
@@ -5267,9 +5267,9 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.toolBox.setCurrentIndex(2)
-        self.toolBox_2.setCurrentIndex(1)
-        self.toolBox_3.setCurrentIndex(0)
+        self.toolBox.setCurrentIndex(0)
+        self.toolBox_2.setCurrentIndex(0)
+        self.toolBox_3.setCurrentIndex(1)
         self.stackedWidget.setCurrentIndex(0)
         self.stackedWidget_2.setCurrentIndex(0)
 
@@ -5279,7 +5279,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Overriding hand v1.0", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"Overriding hand v1.1", None))
         self.createScript.setText(QCoreApplication.translate("MainWindow", u"\u041d\u043e\u0432\u044b\u0439 Overscript", None))
         self.existingScriptsBut.setText(QCoreApplication.translate("MainWindow", u"\u0413\u043e\u0442\u043e\u0432\u044b\u0435 Overscripts", None))
         self.editScriptButton.setText(QCoreApplication.translate("MainWindow", u"\u0418\u0437\u043c\u0435\u043d\u0438\u0442\u044c Overscript", None))
