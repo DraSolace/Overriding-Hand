@@ -1,0 +1,28 @@
+KS escape
+HK t
+PressMode
+
+send("windows+r")
+wait(0.2)
+write("cmd")
+send("enter")
+wait(0.2)
+write("color a")
+send("enter")
+wait(0.2)
+write("cd /")
+send("enter")
+wait(0.2)
+send("alt+enter")
+wait(0.2)
+write("tree")
+send("enter")
+
+
+
+
+
+
+
+
+

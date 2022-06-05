@@ -1,0 +1,7 @@
+from libs import mouse
+from libs import keyboard
+import time
+
+if __name__ == '__main__':
+	def macro():
+		def usedname():
