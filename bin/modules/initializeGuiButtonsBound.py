@@ -38,7 +38,7 @@ def BoundGuiButtons(self):
     self.ui.DMSBUT.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.DMSsettings))
     self.ui.DeprecationBut.clicked.connect(
         lambda: self.showPopUp("Не-а", "Лишь для опытных пользователей\nАктивируйте режим отладки"))
-    self.ui.gitHubBut.clicked.connect(lambda: os.system("start \"\" https://github.com/DraSolace/Overriding-Handv1.1"))
+    self.ui.gitHubBut.clicked.connect(lambda: os.system("start \"\" https://github.com/DraSolace/Overriding-Hand"))
     self.ui.oneRepeatIssueButton.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.oneRepeatIssue))
     self.ui.DMSaccept.clicked.connect(lambda: self.rebindPBorDMS(False))
     self.ui.PanicButAccept.clicked.connect(lambda: self.rebindPBorDMS(True))

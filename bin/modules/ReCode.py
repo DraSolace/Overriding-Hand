@@ -10,10 +10,9 @@ def baseconstructing(source, name):
     "name" - название файла, что будет сделан по итогу
     (TM)ToggleMode; (PM)PressMode; (RM)RepeatMode
     (!!!THM!!!)ThreadMode; - Кривой, полурабочий
-    (!!!THM!!!)ThreadMode; - Кривой, полурабочий
     '''
 
-    #Ебаный костыль, открытие файла в начале и поиск всех кейвордов
+    #открытие файла в начале и поиск всех кейвордов
     sourceFile = codecs.open(source, 'r',encoding="utf-8")
     readed = sourceFile.readlines()
     file = open("uni.cfg", "r")
@@ -33,6 +32,7 @@ def baseconstructing(source, name):
         HKFlag = True
         KSFlag = True
         ModeFlag = True
+        #поиск буквально всех кейвордов и их отметки
         for each in readed:
             if (each.find("HK") != -1):
                 HotKey = (each.replace("HK ", ""))
@@ -61,6 +61,7 @@ def baseconstructing(source, name):
             if (each.find("Delay") != -1):
                 Delay = (each.replace("Delay ", ""))
                 DelayFlag = False
+        #Foolproof проверка на ошибки
         if(DelayFlag):
             Delay = "1"
         if(RepeatFlag):
@@ -72,9 +73,11 @@ def baseconstructing(source, name):
         if SymbolFlag == False:
             return("symbol")
         return(0)
-
-    pizdec = os.path.abspath(f"../compiled/Compiling.report")
-    ReportFile = open(pizdec, 'w',encoding="utf-8")
+    
+    #Отталкиваясь от результата выше, в репорт затолкать результат, который обработает мейнфрейм
+    #Если результат негативный - интерпритация прерывается
+    TempShare = os.path.abspath(f"../compiled/Compiling.report")
+    ReportFile = open(TempShare, 'w',encoding="utf-8")
     returnedValue = findall()
     if returnedValue == "HKKS":
         ReportFile.write("!KS or HK is not defined")
@@ -124,14 +127,15 @@ def baseconstructing(source, name):
         macroFile.write(each)
     templateFile.close()
 
-    #И вновь, чтение файла с исходным кодом, самый пиздец лишь начинается ;)
+    #И вновь, чтение файла с исходным кодом, самый смак лишь начинается
     readed = sourceFile.readlines()
 
     macroFile.write('\n')
-    #Самая хуёвая часть - так называемая '""ИНТРЕПРИТАЦИЯ\КОМПИЛЯЦИЯ""', в  Ж И Р Н Ю Щ И Х  ковычках
+    #так называемая '""ИНТРЕПРИТАЦИЯ""', в  Ж И Р Н Ю Щ И Х  ковычках
     SymbolFlag = True
     QuotesFlag = True
     MouseIndendFlag = True
+    #Скан КАЖДОЙ строчки на наличие кейвордов, и замена их на py'овский код
     for each in readed:
         if (each.find("send") != -1 or each.find("kpress") != -1 or each.find("krelease") != -1 ):
             if (each.count("\"") != 2):
@@ -186,7 +190,7 @@ def baseconstructing(source, name):
     macroFile.close()
 
 
-
+    #Интерпритация всех деректив и нечисленных аргументов
     readed = readed.replace("Pos(x)", f"mouse.get_position()[0]")
     readed = readed.replace("Pos(y)", f"mouse.get_position()[1]")
     readed = readed.replace("Abs", f"True")
@@ -201,21 +205,21 @@ def baseconstructing(source, name):
     sourceFile.close()
 
 
-    #Проверки на шелуху
+    #Проверки на синтаксис питона, на манер Foolproof проверки
     if SymbolFlag == False:
-        ReportFile = open(pizdec, 'w', encoding="utf-8")
+        ReportFile = open(TempShare, 'w', encoding="utf-8")
         ReportFile.write("!Symbol in send")
         ReportFile.close()
         os.remove(os.path.abspath(f"../O-Hands/Compiled/{name}.py"))
         return ("Symbol in send")
     if MouseIndendFlag == False:
-        ReportFile = open(pizdec, 'w', encoding="utf-8")
+        ReportFile = open(TempShare, 'w', encoding="utf-8")
         ReportFile.write("!Mouse TypeError")
         ReportFile.close()
         os.remove(os.path.abspath(f"../O-Hands/Compiled/{name}.py"))
         return ("Mouse TypeError")
     if QuotesFlag == False:
-        ReportFile = open(pizdec, 'w', encoding="utf-8")
+        ReportFile = open(TempShare, 'w', encoding="utf-8")
         ReportFile.write("!No Quotes")
         ReportFile.close()
         os.remove(os.path.abspath(f"../O-Hands/Compiled/{name}.py"))
@@ -226,6 +230,8 @@ def baseconstructing(source, name):
         source = f.read()
     valid = True
     try:
+        #Если py скрипт не спариться - это уже головная боль юзера
+        #я НЕ знаю как, но это уже происходило
         ast.parse(source)
     except SyntaxError:
         valid = False
@@ -233,12 +239,12 @@ def baseconstructing(source, name):
     if valid == True:
         return 0;
     else:
-        pizdec = os.path.abspath(f"../compiled/Compiling.report")
-        ReportFile = open(pizdec, 'w', encoding="utf-8")
+        TempShare = os.path.abspath(f"../compiled/Compiling.report")
+        ReportFile = open(TempShare, 'w', encoding="utf-8")
         ReportFile.write("!Cannot be compiled")
-        pizdec = os.path.abspath(f"../O-Hands/Compiled/{name}.py")
-        #os.remove(os.path.abspath(f"../O-Hands/{name}.manual"))
-        os.remove(pizdec)
+        TempShare = os.path.abspath(f"../O-Hands/Compiled/{name}.py")
+        #os.remove(os.path.abspath(f"../O-Hands/{name}.manual")) сохранить для поддержки легаси
+        os.remove(TempShare)
         ReportFile.close()
     f.close()
 

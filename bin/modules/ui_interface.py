@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+#Сгенерированный Ui файл
+
 ################################################################################
 ## Form generated from reading UI file 'interfaceTGiJnn.ui'
 ##
@@ -7,6 +9,7 @@
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
+
 
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *

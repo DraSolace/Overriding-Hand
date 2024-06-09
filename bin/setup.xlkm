@@ -1,7 +1,0 @@
-../modules/ cmd ->
-pyinstaller main.py --onefile -w --noconsole --icon=O-Hand.ico
-
-pip install pyside2
-pip install pyqt5
-pip install keyboard
-pip install mouse
