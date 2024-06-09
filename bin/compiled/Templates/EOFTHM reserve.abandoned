@@ -1,0 +1,32 @@
+        def MainLoop():
+            global panicbutton
+            while True:
+                keyboard.wait("KS")
+                panicbutton()
+
+        mainthread =  mp.Process(target = MainLoop)
+        macrothread = mp.Process(target = usedname)
+        keyboard.add_hotkey("HK", lambda: MacroStart())
+        mainthread.start()
+
+        def MacroStart():
+            global macrothread, panicbutton
+            keyboard.unhook_all_hotkeys()
+            keyboard.add_hotkey("KS", lambda: panicbutton())
+            keyboard.add_hotkey("HK", lambda: Terminator())
+            macrothread.start()
+
+        def Terminator():
+            global macrothread, panicbutton
+            macrothread.terminate()
+            macrothread.join()
+            macrothread = mp.Process(target=usedname)
+            keyboard.unhook_all_hotkeys()
+            keyboard.add_hotkey("KS", lambda: panicbutton())
+            keyboard.add_hotkey("HK", lambda: MacroStart())
+
+        def panicbutton():
+            Terminator()
+            mainthread.terminate()
+            mainthread.join()
+            quit()

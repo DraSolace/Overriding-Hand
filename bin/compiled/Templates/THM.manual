@@ -1,0 +1,9 @@
+from libs import mouse
+from libs import keyboard
+import time
+if __name__ == '__main__':
+	def macro():
+		global MacroStart, Terminator, usedname, panicbutton, macrothread, MainLoop, mainthread
+		def usedname():
+			while True:
+				sleep(Delay)

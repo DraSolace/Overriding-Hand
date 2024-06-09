@@ -1,0 +1,22 @@
+from libs import mouse
+from libs import keyboard
+import time
+if __name__ == '__main__':
+	def macro():
+		def usedname():
+			global HotK, KillS
+			HotK = False
+			KillS = False
+			def Switch():
+				global HotK
+				HotK = not HotK
+			def killswitch():
+				global KillS, HotK
+				HotK = False
+				KillS = not KillS
+				quit()
+			keyboard.add_hotkey("HK", lambda : Switch())
+			keyboard.add_hotkey("KS", lambda: killswitch())
+			while True:
+				time.sleep(Delay)
+				if HotK:
