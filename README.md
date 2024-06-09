@@ -51,6 +51,3 @@
 1. [keyboard](https://github.com/boppreh/keyboard) + [mouse](https://github.com/boppreh/mouse)
 2. [PyQt5](https://www.riverbankcomputing.com/software/pyqt/)
    + или забить, если есть [PySide2](https://github.com/raccoonmonk/pyside2). Использовал я обе (по-чёрному оверрайдил, делал перегрузки и нарушал все принципы ООП).
-
-## Собранный билд
-Если ты гигачад, что плюётся желчью от одного лишь упоминания питона(как же я тебя понимаю, братан), или у тебя просто нет питона\не хочется с этим ковырятся - у этого репозитория есть [бранч "Built"](https://github.com/DraSolace/Overriding-Handv1.1/tree/Built). Там ***уже собранный*** в exe файл билд. Можно просто скачать и запускать.
