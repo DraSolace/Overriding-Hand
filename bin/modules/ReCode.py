@@ -9,7 +9,7 @@ def baseconstructing(source, name):
     "source" - адрес с исходным "кодом" макроса
     "name" - название файла, что будет сделан по итогу
     (TM)ToggleMode; (PM)PressMode; (RM)RepeatMode
-    (!!!THM!!!)ThreadMode; - Кривой, полурабочий
+    (!!!THM!!!)ThreadMode; - Кривой, полурабочий|| В ДЕПРИКАЦИИ
     '''
 
     #открытие файла в начале и поиск всех кейвордов
